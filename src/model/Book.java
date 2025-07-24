@@ -1,19 +1,23 @@
+package model;
+
 import java.time.LocalDate;
 
-public class Book implements Borrowable {
-    private int id;
+public class Book implements model.Borrowable {
+    private String id;
     private String name;
-    private Author author;
+    private model.Author author;
     private String status;
+    private String category;
     private double price;
-    private Reader currentOwner;
+    private model.Reader currentOwner;
     private LocalDate dateOfPurchase;
 
-    public Book(int id, String name, Author author, double price, LocalDate dateOfPurchase) {
+    public Book(String id, String name, model.Author author, String category, double price, LocalDate dateOfPurchase) {
         this.id = id;
         this.name = name;
         this.author = author;
         this.price= price;
+        this.category = category;
         this.dateOfPurchase = dateOfPurchase;
         this.status = "available";
         this.currentOwner = null;
@@ -21,7 +25,7 @@ public class Book implements Borrowable {
         author.addBook(this);
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -29,7 +33,7 @@ public class Book implements Borrowable {
         return name;
     }
 
-    public Author getAuthor() {
+    public model.Author getAuthor() {
         return author;
     }
 
@@ -41,7 +45,11 @@ public class Book implements Borrowable {
         return price;
     }
 
-    public Reader getCurrentOwner() {
+    public String getCategory() {
+        return category;
+    }
+
+    public model.Reader getCurrentOwner() {
         return currentOwner;
     }
 
@@ -49,7 +57,7 @@ public class Book implements Borrowable {
         return dateOfPurchase;
     }
 
-    public void changeOwner(Reader reader){
+    public void changeOwner(model.Reader reader){
         this.currentOwner = reader;
     }
 

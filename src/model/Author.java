@@ -1,7 +1,9 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Author extends Person{
+public class Author extends model.Person {
     private List<Book> books;
     public Author(int id, String name) {
         super(id, name);

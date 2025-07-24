@@ -1,8 +1,11 @@
+package model;
+
+import java.io.Reader;
 import java.time.LocalDate;
 
 public class MemberRecord {
     private String memberId;
-    private String type;
+    private String type; // Örn: "standard", "premium"
     private String name;
     private String address;
     private String phoneNo;
@@ -23,6 +26,10 @@ public class MemberRecord {
         this.numBooksIssued = 0;
     }
 
+    public MemberRecord(model.Reader reader, LocalDate now) {
+    }
+
+    // Getters and Setters
     public String getMemberId() {
         return memberId;
     }
@@ -55,11 +62,11 @@ public class MemberRecord {
         return numBooksIssued;
     }
 
-    public int getMAX_BOOK_LIMIT() {
+    public int getMaxBookLimit() {
         return MAX_BOOK_LIMIT;
     }
 
-    public boolean canBorrowMoreBooks(){
+    public boolean canBorrowMoreBooks() {
         return numBooksIssued < MAX_BOOK_LIMIT;
     }
 
@@ -77,16 +84,9 @@ public class MemberRecord {
 
     @Override
     public String toString() {
-        return "MemberRecord{" +
-                "memberId='" + memberId + '\'' +
-                ", type='" + type + '\'' +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", phoneNo='" + phoneNo + '\'' +
-                ", member=" + member +
-                ", dateOfMembership=" + dateOfMembership +
-                ", numBooksIssued=" + numBooksIssued +
-                ", MAX_BOOK_LIMIT=" + MAX_BOOK_LIMIT +
-                '}';
+        return "Üye ID: " + memberId + ", İsim: " + name + ", Tür: " + type +
+                ", Telefon: " + phoneNo + ", Adres: " + address +
+                ", Kitap Sayısı: " + numBooksIssued + "/" + MAX_BOOK_LIMIT;
     }
 }
+

@@ -1,4 +1,6 @@
-public class Librarian extends Person{
+package model;
+
+public class Librarian extends model.Person {
     private String password;
     public Librarian(int id, String name, String password) {
         super(id, name);
