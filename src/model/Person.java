@@ -3,12 +3,15 @@ package model;
 import java.util.Objects;
 
 public abstract class Person {
-    private int id;
+    public int id;
     private String name;
 
     public Person(int id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public Person(String name) {
     }
 
     public int getId() {

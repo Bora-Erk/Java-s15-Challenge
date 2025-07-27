@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Author extends model.Person {
     private List<Book> books;
-    public Author(int id, String name) {
-        super(id, name);
+    public Author(String name) {
+        super(name);
         this.books = new ArrayList<>();
     }
 

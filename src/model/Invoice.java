@@ -1,7 +1,7 @@
 package model;
 
-import java.awt.print.Book;
-import java.io.Reader;
+import model.Book;
+import model.Reader;
 import java.time.LocalDate;
 import java.util.UUID;
 

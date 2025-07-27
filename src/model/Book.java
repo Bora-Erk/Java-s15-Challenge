@@ -12,7 +12,7 @@ public class Book implements model.Borrowable {
     private model.Reader currentOwner;
     private LocalDate dateOfPurchase;
 
-    public Book(String id, String name, model.Author author, String category, double price, LocalDate dateOfPurchase) {
+    public Book(String id, String name, Author author, String category, LocalDate dateOfPurchase) {
         this.id = id;
         this.name = name;
         this.author = author;
